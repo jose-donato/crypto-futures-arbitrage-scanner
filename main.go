@@ -369,6 +369,7 @@ func main() {
 	// Start spot exchange connections with orderbook feeds
 	go exchanges.ConnectBinanceSpot(symbols, scanner.priceChan, scanner.orderbookChan, scanner.tradeChan)
 	go exchanges.ConnectBybitSpot(symbols, scanner.priceChan, scanner.orderbookChan, scanner.tradeChan)
+	go exchanges.ConnectBingXSpot(symbols, scanner.priceChan, scanner.orderbookChan, scanner.tradeChan)
 	
 	// Start Pyth price feed connection
 	go exchanges.ConnectPythPrices(symbols, scanner.priceChan, scanner.orderbookChan, scanner.tradeChan)

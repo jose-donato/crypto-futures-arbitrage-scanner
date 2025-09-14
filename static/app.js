@@ -49,6 +49,7 @@ class FuturesArbitrageScanner {
             'paradex_futures': true,
             'bingx_futures': true,
             'binance_spot': true,
+            'bingx_spot': true,
             'bybit_spot': true,
             'pyth': true
         };
@@ -246,8 +247,9 @@ class FuturesArbitrageScanner {
             { key: 'okx_futures', label: 'OKX Futures', color: '#1890ff', lineStyle: LightweightCharts.LineStyle.Solid },
             { key: 'gate_futures', label: 'Gate.io Futures', color: '#6c5ce7', lineStyle: LightweightCharts.LineStyle.Solid },
             { key: 'paradex_futures', label: 'Paradex Futures', color: '#ff6b6b', lineStyle: LightweightCharts.LineStyle.Solid },
-            { key: 'bingx_futures', label: 'BingX Futures', color: '#ff9500', lineStyle: LightweightCharts.LineStyle.Solid },
+            { key: 'bingx_futures', label: 'BingX Futures', color: '#1E3A8A', lineStyle: LightweightCharts.LineStyle.Solid },
             { key: 'binance_spot', label: 'Binance Spot', color: '#f0b90b', lineStyle: LightweightCharts.LineStyle.Dashed },
+            { key: 'bingx_spot', label: 'BingX Spot', color: '#3B82F6', lineStyle: LightweightCharts.LineStyle.Dashed },
             { key: 'bybit_spot', label: 'Bybit Spot', color: '#f7931a', lineStyle: LightweightCharts.LineStyle.Dashed },
             { key: 'pyth', label: 'Pyth Oracle', color: '#00ff88', lineStyle: LightweightCharts.LineStyle.Dotted },
         ];
@@ -544,8 +546,9 @@ class FuturesArbitrageScanner {
             'okx_futures': '#1890ff',
             'gate_futures': '#6c5ce7',
             'paradex_futures': '#ff6b6b',
-            'bingx_futures': '#ff9500',
+            'bingx_futures': '#1E3A8A',
             'binance_spot': '#ffb347',
+            'bingx_spot': '#3B82F6',
             'bybit_spot': '#f7931a',
             'pyth': '#00ff88',
         };
@@ -614,7 +617,7 @@ class FuturesArbitrageScanner {
     performChartUpdate() {
         if (!this.chart || this.priceHistory.size === 0) return;
 
-        const sourceNames = ['binance_futures', 'bybit_futures', 'hyperliquid_futures', 'kraken_futures', 'okx_futures', 'gate_futures', 'paradex_futures', 'bingx_futures', 'binance_spot', 'bybit_spot', 'pyth'];
+        const sourceNames = ['binance_futures', 'bybit_futures', 'hyperliquid_futures', 'kraken_futures', 'okx_futures', 'gate_futures', 'paradex_futures', 'bingx_futures', 'binance_spot', 'bybit_spot', 'bingx_spot', 'pyth'];
         
         sourceNames.forEach(source => {
             const series = this.chartSeries.get(source);
@@ -860,6 +863,7 @@ class FuturesArbitrageScanner {
             'paradex_futures': 'PDX',
             'bingx_futures': 'BNG-F',
             'binance_spot': 'BIN-S',
+            'bingx_spot': 'BNG-S',
             'bybit_spot': 'BYB-S',
             'pyth': 'PYTH'
         };
